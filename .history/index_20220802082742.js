@@ -22,16 +22,17 @@ this.age = age
 }
 
 Person.prototype.eat = function(someFood){
-  if(this.stomach.length < 10){
-  this.stomach.push(someFood);}
+  if(stomach.length < 11){
+  stomach.push(someFood);}
   }
 
  Person.prototype.poop = function(){
-  this.stomach =[];
-  
+    if(stomach.length > 1){
+      stomach.pop();
+    }
   }
 Person.prototype.toString = function(){
-  return `${this.name} , ${this.age}`
+  return this.name, this.age
 }
 
 /*
@@ -51,19 +52,16 @@ Person.prototype.toString = function(){
 */
 
 function Car(model, milesPerGallon) {
-this.tank = 0;
-this.odometer = 0;
-this.model = model;
-this.milesPerGallon = milesPerGallon;
+this.tank = tank = 0,
+this.odometer = odometer = 0
 }
 
 Car.prototype.fill = function(gallons){
-  this.tank = this.tank + gallons;
+  return tank = tank + gallons
 }
 
 Car.prototype.drive = function(distance){
-  (this.odometer = this.odometer + distance), 
-  (this.tank = this.tank - milesPerGallon);
+  return (odometer = odometer + distance), (tank = tank - milesPerGallon);
 }
 
 /*
@@ -79,18 +77,16 @@ Person.call(this, name, age),
 this.favoriteToy = favoriteToy;
 }
 
-Baby.prototype = Object.create(Person.prototype);
-
-Baby.prototype.play = function(favoriteToy){
-  return `Playing with ${this.favoriteToy}`
+Baby.prototype.play = function(x){
+  return `Playing with ${x}`
 }
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
-  1. Global Binding - In the global binding 'this' is binding to the window/console when 'this' isn't binding to any other kind of binding.
-  2. Implictit Binding - In the implictit binding 'this' is binding to the object/ function it is used inside of(left of the dot)
-  3. New Binding - In the new binding 'this' is binding to the new object/function the 'new' key word is adding 
-  4. Explictit Binding - In the explictit binding 'this' is binding is changed when the ,.call, .apply, or .bind commands is used to update a oject/function and 'this' is binding to that updated object/function.
+  1. 
+  2. 
+  3. 
+  4. 
 */
 
 ///////// END OF CHALLENGE /////////
